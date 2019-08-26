@@ -1,4 +1,4 @@
-# 简易环境搭建
+# 简易环境搭建 + 动态配置
 
 ## 1. init npm project with webpack
 
@@ -86,4 +86,10 @@ npm i -D webpack-dev-server
 
 #开发html
 npm i -D html-webpack-plugin
+```
+
+4. webpack-merge
+
+```sh
+npm i -D webpack-merge
 ```
