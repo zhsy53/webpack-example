@@ -89,7 +89,9 @@ npm i -D html-webpack-plugin
 ```
 
 4. webpack-merge
+5. husky
 
 ```sh
 npm i -D webpack-merge
+npm i -D husky
 ```
