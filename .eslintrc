@@ -7,7 +7,7 @@
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  "extends": ["eslint:all", "plugin:prettier/recommended"],
+  "extends": ["eslint:recommended", "plugin:prettier/recommended"],
   "rules": {
     "one-var": 0,
     "func-names": 0,
