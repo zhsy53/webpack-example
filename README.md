@@ -71,11 +71,21 @@ npm i -D -E prettier
 npm i -D eslint-plugin-prettier eslint-config-prettier
 ```
 
+###
+[表达式](https://github.com/prettier/prettier/issues/2078)
+
+```sh
+#需要加引号
+prettier --write --config .prettierrc 'src/**/*'
+```
+
 ## 4. plugin
 
 1. clean-webpack-plugin
 2. html-webpack-plugin
 3. webpack-dev-server
+4. webpack-merge
+5. husky
 
 ```sh
 #clean
@@ -86,14 +96,36 @@ npm i -D webpack-dev-server
 
 #开发html
 npm i -D html-webpack-plugin
-```
 
-4. webpack-merge
-5. husky
-
-```sh
 npm i -D webpack-merge
 
 #git hooks
 npm i -D husky
+```
+
+## 5. vue
+
+### [vue-loader](https://vue-loader.vuejs.org/zh/guide/#%E6%89%8B%E5%8A%A8%E8%AE%BE%E7%BD%AE)
+
+```sh
+npm i vue
+npm i -D vue-loader vue-template-compiler
+
+#依赖
+npm i -D css-loader
+
+```
+
+### [css extract](https://vue-loader.vuejs.org/zh/guide/extract-css.html#webpack-4)
+
+```sh
+npm i -D mini-css-extract-plugin
+```
+
+## 6. babel
+
+```sh
+#@开头是scoped包
+#@preset-env整合了多个包
+npm i -D babel-loader @babel/core @babel/preset-env
 ```
