@@ -9,7 +9,8 @@
     "fix": "npm run format && npm run lint",
     "build": "webpack --config config/webpack.pro.js",
     "dev": "webpack-dev-server --config config/webpack.dev.js",
-    "precommit": "npm run fix"
+    "precommit": "npm run fix",
+    "dll": "webpack --config config/webpack.dll.js --colors --display-modules"
   },
   "keywords": [],
   "author": "",

@@ -2,7 +2,8 @@ const merge = require("webpack-merge");
 const commonConfig = require("./webpack.common");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-// const AutoDllPlugin = require("autodll-webpack-plugin");
+const webpack = require("webpack");
+const path = require("path");
 
 module.exports = merge(commonConfig, {
   mode: "production",
@@ -20,15 +21,33 @@ module.exports = merge(commonConfig, {
   plugins: [
     new MiniCssExtractPlugin({
       filename: "[name].[chunkhash:4].css"
+    }),
+    new webpack.DllReferencePlugin({
+      manifest: path.join(__dirname, "../dll", "lib.manifest.json") //dll plugin manifest file
     })
-    // new AutoDllPlugin({
-    //   inject: true,
-    //   debug: true,
-    //   filename: "[name]_[hash].js",
-    //   path: "./dll",
-    //   entry: {
-    //     vendor: ["vue", "vue-router", "vuex", "react", "react-dom"]
-    //   }
-    // }),
-  ]
+  ],
+  optimization: {
+    splitChunks: {
+      chunks: "async",
+      minSize: 30000,
+      maxSize: 0,
+      minChunks: 1,
+      maxAsyncRequests: 5,
+      maxInitialRequests: 3,
+      automaticNameDelimiter: "~",
+      automaticNameMaxLength: 30,
+      name: true,
+      cacheGroups: {
+        vendors: {
+          test: /[\\/]node_modules[\\/]/,
+          priority: -10
+        },
+        default: {
+          minChunks: 2,
+          priority: -20,
+          reuseExistingChunk: true
+        }
+      }
+    }
+  }
 });

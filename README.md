@@ -3,7 +3,7 @@
 ## 1. init npm project with webpack
 
 ```sh
-mkdir web && cd web
+mkdir web && cd $_
 
 npm init -y
 
@@ -72,6 +72,7 @@ npm i -D eslint-plugin-prettier eslint-config-prettier
 ```
 
 ###
+
 [表达式](https://github.com/prettier/prettier/issues/2078)
 
 ```sh
@@ -135,23 +136,34 @@ npm i -D babel-loader @babel/core @babel/preset-env
 npm i -D babel-plugin-syntax-jsx babel-plugin-transform-vue-jsx babel-helper-vue-jsx-merge-props
 ```
 
-## 7.plugin TODO
+## 7.打包优化
 
-### [doc](https://www.npmjs.com/package/autodll-webpack-plugin)
+- [hot:热部署](https://webpack.js.org/plugins/hot-module-replacement-plugin/)
 
-```sh
-#单独打包
-npm i -D autodll-webpack-plugin
+- [ddl](https://webpack.js.org/plugins/dll-plugin/) #TODO
 
-#提取共同代码:webpack自带 splitChucksPlugin
-#new webpack.optimize.SplitChunksPlugin()
+- [split][https://webpack.js.org/plugins/split-chunks-plugin/]
+
+```json
+optimization: {
+  splitChunks: {
+    chunks: 'async',
+    minSize: 30000,
+    minChunks: 1,
+    maxAsyncRequests: 5,
+    maxInitialRequests: 3,
+    automaticNameDelimiter: '~',
+    name: true,
+    cacheGroups: {}
+  }
+}
 
 ```
-
 
 ## 8.vue-router
 
 [doc](https://router.vuejs.org/zh/installation.html)
+
 ```
 npm i vue-router
 ```

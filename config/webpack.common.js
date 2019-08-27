@@ -17,9 +17,9 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.m?js$/,
-        // exclude: /(node_modules|bower_components)/,
-        exclude: file => /node_modules/.test(file) && !/\.vue\.js/.test(file),
+        test: /\.js$/,
+        exclude: /(node_modules|bower_components)/,
+        // exclude: file => /node_modules/.test(file) && !/\.vue\.js/.test(file),
         loader: "babel-loader"
       },
       {
