@@ -15,7 +15,7 @@ export default {
 
 <style scoped>
 header {
-  margin-bottom: 12px;
+  margin-bottom: 24px;
   background: #232323;
   color: #eee;
   font-size: 24px;

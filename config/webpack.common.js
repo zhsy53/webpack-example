@@ -3,9 +3,6 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HTMLPlugin = require("html-webpack-plugin");
 const VueLoaderPlugin = require("vue-loader/lib/plugin");
 
-const webpack = require("webpack");
-const AutoDllPlugin = require("autodll-webpack-plugin");
-
 module.exports = {
   entry: path.join(__dirname, "../src/main.js"),
   output: {
@@ -15,17 +12,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HTMLPlugin({ template: path.join(__dirname, "../src/index.html") }),
-    new VueLoaderPlugin(),
-    // new AutoDllPlugin({
-    //   inject: true,
-    //   debug: true,
-    //   filename: "[name]_[hash].js",
-    //   path: "./dll",
-    //   entry: {
-    //     vendor: ["vue", "vue-router", "vuex", "react", "react-dom"]
-    //   }
-    // }),
-    new webpack.optimize.SplitChunksPlugin()
+    new VueLoaderPlugin()
   ],
   module: {
     rules: [
