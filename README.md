@@ -124,8 +124,26 @@ npm i -D mini-css-extract-plugin
 
 ## 6. babel
 
+###[doc](https://github.com/babel/babel-loader)
+
 ```sh
 #@开头是scoped包
 #@preset-env整合了多个包
 npm i -D babel-loader @babel/core @babel/preset-env
+
+#vue
+npm i -D babel-plugin-syntax-jsx babel-plugin-transform-vue-jsx babel-helper-vue-jsx-merge-props
+```
+
+## 7.plugin TODO
+
+### [doc](https://www.npmjs.com/package/autodll-webpack-plugin)
+
+```sh
+#单独打包
+npm i -D autodll-webpack-plugin
+
+#提取共同代码:webpack自带 splitChucksPlugin
+#new webpack.optimize.SplitChunksPlugin()
+
 ```
