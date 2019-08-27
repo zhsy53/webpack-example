@@ -1,23 +1,29 @@
 <template>
-  <div>
-    <Header title="你好" />
-    <div id="container">container</div>
-    <Footer />
+  <div id="app">
+    <div id="nav">
+      <router-link to="/">Home</router-link>|
+      <router-link to="/one">About</router-link>
+    </div>
+    <router-view />
   </div>
 </template>
 
-<script>
-import Header from "./components/Header.vue";
-import Footer from "./components/Footer.vue";
+<style>
+#app {
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  text-align: center;
+  color: #2c3e50;
+}
+#nav {
+  padding: 30px;
+}
 
-export default {
-  components: { Header, Footer }
-};
-</script>
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
 
-<style scoped>
-#container {
-  padding: 3px;
-  background: #ddd;
+#nav a.router-link-exact-active {
+  color: #42b983;
 }
 </style>

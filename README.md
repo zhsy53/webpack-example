@@ -147,3 +147,11 @@ npm i -D autodll-webpack-plugin
 #new webpack.optimize.SplitChunksPlugin()
 
 ```
+
+
+## 8.vue-router
+
+[doc](https://router.vuejs.org/zh/installation.html)
+```
+npm i vue-router
+```

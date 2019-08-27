@@ -1,11 +1,9 @@
 {
   "name": "webpack-example",
   "version": "1.0.0",
-  "description": "## 1. init npm project with webpack",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "init": "npm i",
     "lint": "eslint src/ --fix",
     "format": "prettier --write --config .prettierrc 'src/**/*'",
     "fix": "npm run format && npm run lint",
@@ -19,7 +17,6 @@
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
-    "autodll-webpack-plugin": "^0.4.2",
     "babel-helper-vue-jsx-merge-props": "^2.0.3",
     "babel-loader": "^8.0.6",
     "babel-plugin-syntax-jsx": "^6.18.0",
@@ -43,6 +40,7 @@
     "webpack-merge": "^4.2.1"
   },
   "dependencies": {
-    "vue": "^2.6.10"
+    "vue": "^2.6.10",
+    "vue-router": "^3.1.2"
   }
 }
