@@ -138,6 +138,8 @@ npm i -D babel-plugin-syntax-jsx babel-plugin-transform-vue-jsx babel-helper-vue
 
 ## 7.打包优化
 
+[ref](https://juejin.im/post/5ac76a8f51882555677ecc06)
+
 - [hot:热部署](https://webpack.js.org/plugins/hot-module-replacement-plugin/)
 
 - [ddl](https://webpack.js.org/plugins/dll-plugin/) #TODO
